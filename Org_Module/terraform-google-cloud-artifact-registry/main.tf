@@ -14,7 +14,7 @@ resource "google_artifact_registry_repository" "repo" {
         }               
     }                 
     dynamic "maven_config" {                
-        for_each 								                      = var.maven_config[*]
+        for_each 								                       = var.maven_config[*]
         content {         
             allow_snapshot_overwrites 			                      = lookup(maven_config.value, "allow_snapshot_overwrites", "")
             version_policy            			                      = lookup(maven_config.value,"version_policy", "")
